@@ -1,0 +1,199 @@
+course,begin_date,completion_date,price,login,name,surname
+Pedicure,2000-01-20 21:12:04,2000-01-26 21:12:04,420.0,1003,Julia,Acosta
+Body Waxing,2000-05-23 13:35:00,2000-05-26 13:35:00,96.0,1001,Matthew,Jackson
+Haircut,2000-09-12 03:25:59,2000-09-16 03:25:59,540.0,1000,Eugene,Calhoun
+Haircut,2000-09-12 03:25:59,2000-09-16 03:25:59,540.0,1001,Matthew,Jackson
+Haircut,2000-09-12 03:25:59,2000-09-16 03:25:59,540.0,1002,Julia,Bradley
+Pedicure,2000-10-26 14:12:27,2000-10-28 14:12:27,420.0,1000,Eugene,Calhoun
+Hair Conditioning,2001-02-09 16:20:53,2001-02-14 16:20:53,360.0,1002,Julia,Bradley
+Hair Conditioning,2001-02-09 16:20:53,2001-02-14 16:20:53,360.0,1001,Matthew,Jackson
+Hair Conditioning,2001-02-09 16:20:53,2001-02-14 16:20:53,360.0,1000,Eugene,Calhoun
+Hair Conditioning,2001-05-29 03:58:41,2001-06-03 03:58:41,360.0,1002,Julia,Bradley
+Hair Conditioning,2001-05-29 03:58:41,2001-06-03 03:58:41,360.0,1000,Eugene,Calhoun
+Eyebrow Shaping,2001-07-17 07:30:15,2001-07-19 07:30:15,52.5,1001,Matthew,Jackson
+Eyebrow Shaping,2001-07-17 07:30:15,2001-07-19 07:30:15,52.5,1003,Julia,Acosta
+Milk Peel,2001-10-05 13:12:03,2001-10-08 13:12:03,60.0,1003,Julia,Acosta
+Milk Peel,2001-10-05 13:12:03,2001-10-08 13:12:03,60.0,1001,Matthew,Jackson
+Massage,2002-01-13 15:59:13,2002-01-19 15:59:13,630.0,1001,Matthew,Jackson
+Massage,2002-01-13 15:59:13,2002-01-19 15:59:13,630.0,1002,Julia,Bradley
+Massage,2002-01-13 15:59:13,2002-01-19 15:59:13,630.0,1000,Eugene,Calhoun
+Massage,2002-01-13 15:59:13,2002-01-19 15:59:13,630.0,1003,Julia,Acosta
+Wedding Specials,2002-05-26 17:11:55,2002-06-03 17:11:55,1200.0,1000,Eugene,Calhoun
+Event Makeup,2002-09-26 13:45:34,2002-10-03 13:45:34,805.0,1001,Matthew,Jackson
+Pedicure,2002-12-16 11:24:37,2002-12-21 11:24:37,420.0,1001,Matthew,Jackson
+Pedicure,2002-12-16 11:24:37,2002-12-21 11:24:37,420.0,1002,Julia,Bradley
+Acne Treatments,2003-02-21 21:09:25,2003-02-27 21:09:25,437.5,1003,Julia,Acosta
+Face Waxing,2003-04-14 22:03:08,2003-04-19 22:03:08,115.0,1002,Julia,Bradley
+Body Waxing,2003-09-04 05:25:35,2003-09-07 05:25:35,96.0,1003,Julia,Acosta
+Body Waxing,2003-09-04 05:25:35,2003-09-07 05:25:35,96.0,1001,Matthew,Jackson
+Haircut,2003-10-02 23:36:36,2003-10-07 23:36:36,540.0,1002,Julia,Bradley
+Haircut,2003-10-02 23:36:36,2003-10-07 23:36:36,540.0,1003,Julia,Acosta
+Haircut,2003-10-02 23:36:36,2003-10-07 23:36:36,540.0,1000,Eugene,Calhoun
+Body Waxing,2004-02-29 17:12:36,2004-03-05 17:12:36,96.0,1001,Matthew,Jackson
+Haircut,2004-04-28 15:31:26,2004-05-02 15:31:26,540.0,1001,Matthew,Jackson
+Manicure,2004-09-03 05:12:18,2004-09-06 05:12:18,360.0,1003,Julia,Acosta
+Manicure,2004-09-03 05:12:18,2004-09-06 05:12:18,360.0,1001,Matthew,Jackson
+Haircut,2004-12-07 16:09:05,2004-12-12 16:09:05,540.0,1000,Eugene,Calhoun
+Haircut,2004-12-07 16:09:05,2004-12-12 16:09:05,540.0,1001,Matthew,Jackson
+Haircut,2004-12-07 16:09:05,2004-12-12 16:09:05,540.0,1003,Julia,Acosta
+Haircut,2004-12-07 16:09:05,2004-12-12 16:09:05,540.0,1002,Julia,Bradley
+Moisturizing Facials,2005-02-16 22:11:52,2005-02-18 22:11:52,183.75,1003,Julia,Acosta
+Moisturizing Facials,2005-02-16 22:11:52,2005-02-18 22:11:52,183.75,1001,Matthew,Jackson
+Eyebrow Shaping,2005-04-01 09:46:21,2005-04-02 09:46:21,52.5,1000,Eugene,Calhoun
+Eyebrow Shaping,2005-04-01 09:46:21,2005-04-02 09:46:21,52.5,1001,Matthew,Jackson
+Eyebrow Shaping,2005-07-21 14:07:56,2005-07-22 14:07:56,52.5,1003,Julia,Acosta
+Eyebrow Shaping,2005-07-21 14:07:56,2005-07-22 14:07:56,52.5,1002,Julia,Bradley
+Massage,2005-12-21 21:56:21,2005-12-25 21:56:21,630.0,1001,Matthew,Jackson
+Massage,2005-12-21 21:56:21,2005-12-25 21:56:21,630.0,1002,Julia,Bradley
+Massage,2005-12-21 21:56:21,2005-12-25 21:56:21,630.0,1003,Julia,Acosta
+Hair Conditioning,2006-03-27 05:23:37,2006-04-01 05:23:37,360.0,1001,Matthew,Jackson
+Hair Conditioning,2006-03-27 05:23:37,2006-04-01 05:23:37,360.0,1003,Julia,Acosta
+Hair Conditioning,2006-03-27 05:23:37,2006-04-01 05:23:37,360.0,1000,Eugene,Calhoun
+Hair Conditioning,2006-03-27 05:23:37,2006-04-01 05:23:37,360.0,1002,Julia,Bradley
+Manicure,2006-05-07 11:03:20,2006-05-13 11:03:20,360.0,1003,Julia,Acosta
+Manicure,2006-05-07 11:03:20,2006-05-13 11:03:20,360.0,1002,Julia,Bradley
+Manicure,2006-05-07 11:03:20,2006-05-13 11:03:20,360.0,1000,Eugene,Calhoun
+Massage,2006-08-06 08:28:10,2006-08-10 08:28:10,630.0,1001,Matthew,Jackson
+Massage,2006-08-06 08:28:10,2006-08-10 08:28:10,630.0,1000,Eugene,Calhoun
+Massage,2006-08-06 08:28:10,2006-08-10 08:28:10,630.0,1002,Julia,Bradley
+Wedding Specials,2006-11-20 11:06:19,2006-11-30 11:06:19,1200.0,1003,Julia,Acosta
+Wedding Specials,2006-11-20 11:06:19,2006-11-30 11:06:19,1200.0,1000,Eugene,Calhoun
+Wedding Specials,2006-11-20 11:06:19,2006-11-30 11:06:19,1200.0,1002,Julia,Bradley
+Body Waxing,2007-03-25 18:37:16,2007-03-30 18:37:16,96.0,1002,Julia,Bradley
+Wedding Specials,2007-06-23 22:48:19,2007-06-30 22:48:19,1200.0,1001,Matthew,Jackson
+Wedding Specials,2007-06-23 22:48:19,2007-06-30 22:48:19,1200.0,1003,Julia,Acosta
+Wedding Specials,2007-06-23 22:48:19,2007-06-30 22:48:19,1200.0,1002,Julia,Bradley
+Wedding Specials,2007-06-23 22:48:19,2007-06-30 22:48:19,1200.0,1000,Eugene,Calhoun
+Event Makeup,2007-08-05 19:33:20,2007-08-11 19:33:20,805.0,1001,Matthew,Jackson
+Eyelash Extension,2007-10-14 23:00:52,2007-10-17 23:00:52,367.5,1001,Matthew,Jackson
+Eyelash Extension,2007-10-14 23:00:52,2007-10-17 23:00:52,367.5,1000,Eugene,Calhoun
+Eyelash Extension,2007-10-14 23:00:52,2007-10-17 23:00:52,367.5,1002,Julia,Bradley
+Eyelash Extension,2007-10-14 23:00:52,2007-10-17 23:00:52,367.5,1003,Julia,Acosta
+Hair Conditioning,2008-02-02 07:24:21,2008-02-08 07:24:21,360.0,1000,Eugene,Calhoun
+Hair Conditioning,2008-02-02 07:24:21,2008-02-08 07:24:21,360.0,1002,Julia,Bradley
+Hair Conditioning,2008-02-02 07:24:21,2008-02-08 07:24:21,360.0,1001,Matthew,Jackson
+Freckle Bleaching,2008-04-27 03:00:18,2008-05-02 03:00:18,1150.0,1001,Matthew,Jackson
+Freckle Bleaching,2008-04-27 03:00:18,2008-05-02 03:00:18,1150.0,1003,Julia,Acosta
+Freckle Bleaching,2008-04-27 03:00:18,2008-05-02 03:00:18,1150.0,1000,Eugene,Calhoun
+Freckle Bleaching,2008-04-27 03:00:18,2008-05-02 03:00:18,1150.0,1002,Julia,Bradley
+Eyelash Extension,2008-09-23 21:08:24,2008-09-29 21:08:24,367.5,1002,Julia,Bradley
+Eyelash Extension,2008-09-23 21:08:24,2008-09-29 21:08:24,367.5,1001,Matthew,Jackson
+Eyelash Extension,2008-12-21 18:06:57,2008-12-25 18:06:57,367.5,1000,Eugene,Calhoun
+Eyelash Extension,2008-12-21 18:06:57,2008-12-25 18:06:57,367.5,1001,Matthew,Jackson
+Eyelash Extension,2008-12-21 18:06:57,2008-12-25 18:06:57,367.5,1002,Julia,Bradley
+Eyelash Extension,2008-12-21 18:06:57,2008-12-25 18:06:57,367.5,1003,Julia,Acosta
+Haircut,2009-03-09 03:48:59,2009-03-15 03:48:59,540.0,1003,Julia,Acosta
+Eyebrow Shaping,2009-05-20 11:24:39,2009-05-24 11:24:39,52.5,1001,Matthew,Jackson
+Eyebrow Shaping,2009-05-20 11:24:39,2009-05-24 11:24:39,52.5,1000,Eugene,Calhoun
+Eyebrow Shaping,2009-05-20 11:24:39,2009-05-24 11:24:39,52.5,1002,Julia,Bradley
+Milk Peel,2009-09-05 15:37:16,2009-09-06 15:37:16,60.0,1003,Julia,Acosta
+Milk Peel,2009-09-05 15:37:16,2009-09-06 15:37:16,60.0,1000,Eugene,Calhoun
+Milk Peel,2009-09-05 15:37:16,2009-09-06 15:37:16,60.0,1001,Matthew,Jackson
+Milk Peel,2009-09-05 15:37:16,2009-09-06 15:37:16,60.0,1002,Julia,Bradley
+Wedding Specials,2009-10-22 14:44:34,2009-10-31 14:44:34,1200.0,1002,Julia,Bradley
+Wedding Specials,2009-10-22 14:44:34,2009-10-31 14:44:34,1200.0,1003,Julia,Acosta
+Acne Treatments,2010-03-03 09:46:58,2010-03-07 09:46:58,437.5,1003,Julia,Acosta
+Eyelash Extension,2010-06-02 12:03:50,2010-06-07 12:03:50,367.5,1003,Julia,Acosta
+Eyelash Extension,2010-06-02 12:03:50,2010-06-07 12:03:50,367.5,1002,Julia,Bradley
+Eyelash Extension,2010-06-02 12:03:50,2010-06-07 12:03:50,367.5,1001,Matthew,Jackson
+Eyelash Extension,2010-06-02 12:03:50,2010-06-07 12:03:50,367.5,1000,Eugene,Calhoun
+Pedicure,2010-09-02 13:13:02,2010-09-08 13:13:02,420.0,1001,Matthew,Jackson
+Pedicure,2010-09-02 13:13:02,2010-09-08 13:13:02,420.0,1002,Julia,Bradley
+Pedicure,2010-09-02 13:13:02,2010-09-08 13:13:02,420.0,1003,Julia,Acosta
+Pedicure,2010-09-02 13:13:02,2010-09-08 13:13:02,420.0,1000,Eugene,Calhoun
+Derma Roller,2010-10-13 11:49:18,2010-10-18 11:49:18,55.0,1001,Matthew,Jackson
+Derma Roller,2010-10-13 11:49:18,2010-10-18 11:49:18,55.0,1002,Julia,Bradley
+Derma Roller,2010-10-13 11:49:18,2010-10-18 11:49:18,55.0,1000,Eugene,Calhoun
+Derma Roller,2010-10-13 11:49:18,2010-10-18 11:49:18,55.0,1003,Julia,Acosta
+Event Makeup,2011-01-21 17:35:04,2011-01-27 17:35:04,805.0,1002,Julia,Bradley
+Event Makeup,2011-01-21 17:35:04,2011-01-27 17:35:04,805.0,1000,Eugene,Calhoun
+Event Makeup,2011-01-21 17:35:04,2011-01-27 17:35:04,805.0,1001,Matthew,Jackson
+Moisturizing Facials,2011-04-17 15:55:30,2011-04-20 15:55:30,183.75,1000,Eugene,Calhoun
+Moisturizing Facials,2011-04-17 15:55:30,2011-04-20 15:55:30,183.75,1003,Julia,Acosta
+Wedding Specials,2011-09-22 06:45:40,2011-09-29 06:45:40,1200.0,1003,Julia,Acosta
+Wedding Specials,2011-09-22 06:45:40,2011-09-29 06:45:40,1200.0,1001,Matthew,Jackson
+Wedding Specials,2011-09-22 06:45:40,2011-09-29 06:45:40,1200.0,1002,Julia,Bradley
+Face Waxing,2011-10-27 23:18:11,2011-10-30 23:18:11,115.0,1000,Eugene,Calhoun
+Moisturizing Facials,2012-01-07 05:46:03,2012-01-10 05:46:03,183.75,1000,Eugene,Calhoun
+Moisturizing Facials,2012-01-07 05:46:03,2012-01-10 05:46:03,183.75,1002,Julia,Bradley
+Moisturizing Facials,2012-01-07 05:46:03,2012-01-10 05:46:03,183.75,1001,Matthew,Jackson
+Face Waxing,2012-06-15 17:25:31,2012-06-20 17:25:31,115.0,1003,Julia,Acosta
+Face Waxing,2012-06-15 17:25:31,2012-06-20 17:25:31,115.0,1002,Julia,Bradley
+Milk Peel,2012-08-03 08:09:44,2012-08-08 08:09:44,60.0,1000,Eugene,Calhoun
+Milk Peel,2012-08-03 08:09:44,2012-08-08 08:09:44,60.0,1003,Julia,Acosta
+Body Waxing,2012-11-20 13:15:40,2012-11-24 13:15:40,96.0,1003,Julia,Acosta
+Wedding Specials,2013-03-28 15:33:42,2013-04-04 15:33:42,1200.0,1000,Eugene,Calhoun
+Wedding Specials,2013-03-28 15:33:42,2013-04-04 15:33:42,1200.0,1003,Julia,Acosta
+Wedding Specials,2013-03-28 15:33:42,2013-04-04 15:33:42,1200.0,1002,Julia,Bradley
+Wedding Specials,2013-03-28 15:33:42,2013-04-04 15:33:42,1200.0,1001,Matthew,Jackson
+Pedicure,2013-06-18 10:52:04,2013-06-21 10:52:04,420.0,1001,Matthew,Jackson
+Pedicure,2013-06-18 10:52:04,2013-06-21 10:52:04,420.0,1002,Julia,Bradley
+Pedicure,2013-06-18 10:52:04,2013-06-21 10:52:04,420.0,1003,Julia,Acosta
+Derma Roller,2013-07-23 18:09:06,2013-07-26 18:09:06,55.0,1001,Matthew,Jackson
+Derma Roller,2013-10-05 20:02:51,2013-10-09 20:02:51,55.0,1000,Eugene,Calhoun
+Body Waxing,2014-01-06 04:09:46,2014-01-09 04:09:46,96.0,1002,Julia,Bradley
+Milk Peel,2014-05-04 00:41:04,2014-05-09 00:41:04,60.0,1003,Julia,Acosta
+Milk Peel,2014-09-27 00:15:55,2014-09-29 00:15:55,60.0,1002,Julia,Bradley
+Milk Peel,2014-09-27 00:15:55,2014-09-29 00:15:55,60.0,1003,Julia,Acosta
+Milk Peel,2014-09-27 00:15:55,2014-09-29 00:15:55,60.0,1001,Matthew,Jackson
+Milk Peel,2014-09-27 00:15:55,2014-09-29 00:15:55,60.0,1000,Eugene,Calhoun
+Moisturizing Facials,2014-10-21 21:31:19,2014-10-24 21:31:19,183.75,1001,Matthew,Jackson
+Acne Treatments,2015-01-22 05:13:50,2015-01-27 05:13:50,437.5,1001,Matthew,Jackson
+Acne Treatments,2015-01-22 05:13:50,2015-01-27 05:13:50,437.5,1002,Julia,Bradley
+Acne Treatments,2015-01-22 05:13:50,2015-01-27 05:13:50,437.5,1003,Julia,Acosta
+Manicure,2015-04-25 00:51:47,2015-04-30 00:51:47,360.0,1003,Julia,Acosta
+Manicure,2015-04-25 00:51:47,2015-04-30 00:51:47,360.0,1002,Julia,Bradley
+Event Makeup,2015-07-13 08:57:07,2015-07-19 08:57:07,805.0,1003,Julia,Acosta
+Event Makeup,2015-07-13 08:57:07,2015-07-19 08:57:07,805.0,1001,Matthew,Jackson
+Event Makeup,2015-07-13 08:57:07,2015-07-19 08:57:07,805.0,1000,Eugene,Calhoun
+Event Makeup,2015-12-23 08:32:24,2015-12-28 08:32:24,805.0,1002,Julia,Bradley
+Event Makeup,2015-12-23 08:32:24,2015-12-28 08:32:24,805.0,1001,Matthew,Jackson
+Event Makeup,2015-12-23 08:32:24,2015-12-28 08:32:24,805.0,1000,Eugene,Calhoun
+Hair Conditioning,2016-01-13 16:23:15,2016-01-16 16:23:15,360.0,1000,Eugene,Calhoun
+Body Waxing,2016-06-24 10:55:11,2016-06-28 10:55:11,96.0,1001,Matthew,Jackson
+Body Waxing,2016-06-24 10:55:11,2016-06-28 10:55:11,96.0,1000,Eugene,Calhoun
+Body Waxing,2016-07-30 01:27:39,2016-07-31 01:27:39,96.0,1002,Julia,Bradley
+Eyebrow Shaping,2016-11-30 12:33:45,2016-12-04 12:33:45,52.5,1002,Julia,Bradley
+Eyebrow Shaping,2016-11-30 12:33:45,2016-12-04 12:33:45,52.5,1001,Matthew,Jackson
+Eyebrow Shaping,2017-02-04 12:50:14,2017-02-06 12:50:14,52.5,1000,Eugene,Calhoun
+Eyebrow Shaping,2017-02-04 12:50:14,2017-02-06 12:50:14,52.5,1003,Julia,Acosta
+Eyebrow Shaping,2017-02-04 12:50:14,2017-02-06 12:50:14,52.5,1001,Matthew,Jackson
+Eyebrow Shaping,2017-02-04 12:50:14,2017-02-06 12:50:14,52.5,1002,Julia,Bradley
+Body Waxing,2017-04-26 07:34:00,2017-04-28 07:34:00,96.0,1002,Julia,Bradley
+Event Makeup,2017-07-06 22:51:05,2017-07-14 22:51:05,805.0,1001,Matthew,Jackson
+Event Makeup,2017-07-06 22:51:05,2017-07-14 22:51:05,805.0,1000,Eugene,Calhoun
+Event Makeup,2017-07-06 22:51:05,2017-07-14 22:51:05,805.0,1002,Julia,Bradley
+Face Waxing,2017-09-27 14:29:19,2017-10-01 14:29:19,115.0,1002,Julia,Bradley
+Face Waxing,2017-09-27 14:29:19,2017-10-01 14:29:19,115.0,1000,Eugene,Calhoun
+Hair Conditioning,2018-03-10 21:11:38,2018-03-13 21:11:38,360.0,1003,Julia,Acosta
+Hair Conditioning,2018-03-10 21:11:38,2018-03-13 21:11:38,360.0,1000,Eugene,Calhoun
+Hair Conditioning,2018-03-10 21:11:38,2018-03-13 21:11:38,360.0,1001,Matthew,Jackson
+Manicure,2018-06-05 08:53:04,2018-06-11 08:53:04,360.0,1001,Matthew,Jackson
+Manicure,2018-06-05 08:53:04,2018-06-11 08:53:04,360.0,1003,Julia,Acosta
+Manicure,2018-06-05 08:53:04,2018-06-11 08:53:04,360.0,1002,Julia,Bradley
+Face Waxing,2018-08-10 16:50:36,2018-08-13 16:50:36,115.0,1001,Matthew,Jackson
+Face Waxing,2018-08-10 16:50:36,2018-08-13 16:50:36,115.0,1000,Eugene,Calhoun
+Derma Roller,2018-12-26 22:59:47,2018-12-30 22:59:47,55.0,1001,Matthew,Jackson
+Derma Roller,2018-12-26 22:59:47,2018-12-30 22:59:47,55.0,1003,Julia,Acosta
+Pedicure,2019-03-02 18:27:53,2019-03-07 18:27:53,420.0,1000,Eugene,Calhoun
+Acne Treatments,2019-06-24 01:22:39,2019-06-30 01:22:39,437.5,1003,Julia,Acosta
+Acne Treatments,2019-06-24 01:22:39,2019-06-30 01:22:39,437.5,1000,Eugene,Calhoun
+Acne Treatments,2019-08-25 13:33:17,2019-09-01 13:33:17,437.5,1001,Matthew,Jackson
+Acne Treatments,2019-08-25 13:33:17,2019-09-01 13:33:17,437.5,1003,Julia,Acosta
+Acne Treatments,2019-08-25 13:33:17,2019-09-01 13:33:17,437.5,1000,Eugene,Calhoun
+Acne Treatments,2019-08-25 13:33:17,2019-09-01 13:33:17,437.5,1002,Julia,Bradley
+Event Makeup,2019-10-11 14:23:51,2019-10-18 14:23:51,805.0,1001,Matthew,Jackson
+Event Makeup,2019-10-11 14:23:51,2019-10-18 14:23:51,805.0,1002,Julia,Bradley
+Event Makeup,2019-10-11 14:23:51,2019-10-18 14:23:51,805.0,1000,Eugene,Calhoun
+Event Makeup,2019-10-11 14:23:51,2019-10-18 14:23:51,805.0,1003,Julia,Acosta
+Hair Conditioning,2020-01-05 04:59:22,2020-01-07 04:59:22,360.0,1001,Matthew,Jackson
+Hair Conditioning,2020-01-05 04:59:22,2020-01-07 04:59:22,360.0,1003,Julia,Acosta
+Pedicure,2020-05-09 06:34:16,2020-05-12 06:34:16,420.0,1003,Julia,Acosta
+Pedicure,2020-05-09 06:34:16,2020-05-12 06:34:16,420.0,1000,Eugene,Calhoun
+Acne Treatments,2020-08-31 13:47:00,2020-09-07 13:47:00,437.5,1002,Julia,Bradley
+Acne Treatments,2020-08-31 13:47:00,2020-09-07 13:47:00,437.5,1001,Matthew,Jackson
+Body Waxing,2020-10-20 09:51:21,2020-10-25 09:51:21,96.0,1002,Julia,Bradley
+Body Waxing,2020-10-20 09:51:21,2020-10-25 09:51:21,96.0,1003,Julia,Acosta
+Body Waxing,2020-10-20 09:51:21,2020-10-25 09:51:21,96.0,1000,Eugene,Calhoun
+Face Waxing,2020-12-26 07:01:51,2020-12-29 07:01:51,115.0,1001,Matthew,Jackson
+Face Waxing,2020-12-26 07:01:51,2020-12-29 07:01:51,115.0,1002,Julia,Bradley

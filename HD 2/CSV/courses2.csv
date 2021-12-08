@@ -1,0 +1,12 @@
+course,begin_date,completion_date,price,login,name,surname
+Eyebrow Shaping,2021-01-31 14:13:25,2021-02-02 14:13:25,52.5,1003,Julia,Acosta
+Eyebrow Shaping,2021-01-31 14:13:25,2021-02-02 14:13:25,52.5,1000,Eugene,Calhoun
+Eyebrow Shaping,2021-01-31 14:13:25,2021-02-02 14:13:25,52.5,1004,Julie,Hodge
+Face Waxing,2021-04-29 08:51:05,2021-04-30 08:51:05,115.0,1002,Julia,Bradley
+Face Waxing,2021-04-29 08:51:05,2021-04-30 08:51:05,115.0,1000,Eugene,Calhoun
+Face Waxing,2021-04-29 08:51:05,2021-04-30 08:51:05,115.0,1001,Matthew,Jackson
+Face Waxing,2021-07-05 05:00:26,2021-07-06 05:00:26,115.0,1004,Julie,Hodge
+Face Waxing,2021-07-05 05:00:26,2021-07-06 05:00:26,115.0,1003,Julia,Acosta
+Massage,2021-10-08 02:51:56,2021-10-16 02:51:56,630.0,1004,Julie,Hodge
+Milk Peel,2021-10-23 20:00:02,2021-10-27 20:00:02,60.0,1001,Matthew,Jackson
+Milk Peel,2021-10-23 20:00:02,2021-10-27 20:00:02,60.0,1004,Julie,Hodge

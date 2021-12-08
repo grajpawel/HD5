@@ -1,0 +1,1029 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/5/2021 8:22:08 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MATEBOOK"
+  DTS:CreatorName="MATEBOOK\Konrad Suszko"
+  DTS:DTSID="{CC7E61FD-7503-4AB5-8CDC-EF34FC4A9D2E}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1045"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{1706CE64-F580-465F-AFC6-62395B613D50}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DateInsert.sql]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2FC625DD-882D-477B-9194-78590F15AD4E}"
+      DTS:ObjectName="DateInsert.sql">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\grajp\Desktop\HD5\DateInsert.sql" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A478DD1E-C62F-43DC-B8DF-AA6BA893F7A8}"
+      DTS:ObjectName="localhost">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.BeautySalon]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C80B40E7-5D1C-4175-A6B1-C73993C47D43}"
+      DTS:ObjectName="localhost.BeautySalon">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=BeautySalon;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Inserting into Date"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5000A340-3A14-4D2D-8CC9-D6D1229A46EE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Inserting into Date"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Inserting into Date\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Data]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Inserting into Date\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.BeautySalon]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.BeautySalon]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DzienMiesiaca]"
+                      cachedDataType="i4"
+                      cachedName="DzienMiesiaca"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienMiesiaca]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienMiesiaca]" />
+                    <inputColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DzienNumer]"
+                      cachedDataType="i4"
+                      cachedName="DzienNumer"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienNumer]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienNumer]" />
+                    <inputColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DzienNazwa]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="12"
+                      cachedName="DzienNazwa"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienNazwa]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienNazwa]" />
+                    <inputColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MiesiacNumer]"
+                      cachedDataType="i4"
+                      cachedName="MiesiacNumer"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MiesiacNumer]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiesiacNumer]" />
+                    <inputColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[MiesiacNazwa]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="11"
+                      cachedName="MiesiacNazwa"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MiesiacNazwa]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiesiacNazwa]" />
+                    <inputColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Rok]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="Rok"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rok]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rok]" />
+                    <inputColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Data]"
+                      cachedDataType="dbDate"
+                      cachedName="Data"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="numeric"
+                      name="ID"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienMiesiaca]"
+                      dataType="numeric"
+                      name="DzienMiesiaca"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienNumer]"
+                      dataType="numeric"
+                      name="DzienNumer"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DzienNazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="DzienNazwa" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MiesiacNumer]"
+                      dataType="numeric"
+                      name="MiesiacNumer"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[MiesiacNazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="20"
+                      name="MiesiacNazwa" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Rok]"
+                      dataType="numeric"
+                      name="Rok"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Data]"
+                      dataType="dbDate"
+                      name="Data" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into Date\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Date\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Date\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into Date\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DECLARE  @Start datetime
+		 ,@End  datetime
+DECLARE @AllDates table
+		(Date datetime)
+
+SELECT @Start = '2000-01-01', @End = '2021-12-31';
+
+WITH Nbrs_3( n ) AS ( SELECT 1 UNION SELECT 0 ),
+     Nbrs_2( n ) AS ( SELECT 1 FROM Nbrs_3 n1 CROSS JOIN Nbrs_3 n2 ),
+     Nbrs_1( n ) AS ( SELECT 1 FROM Nbrs_2 n1 CROSS JOIN Nbrs_2 n2 ),
+     Nbrs_0( n ) AS ( SELECT 1 FROM Nbrs_1 n1 CROSS JOIN Nbrs_1 n2 ),
+     Nbrs  ( n ) AS ( SELECT 1 FROM Nbrs_0 n1 CROSS JOIN Nbrs_0 n2 )
+
+	SELECT  CONVERT(date, @Start+n-1) as Data, day(@Start+n-1) as DzienMiesiaca, DATEPART("dw", @Start+n-1) as DzienNumer, CASE DATEPART("dw", @Start+n-1)
+WHEN 1 THEN 'Niedziela'
+WHEN 2 THEN 'Poniedziałek'
+WHEN 3 THEN 'Wtorek'
+WHEN 4 THEN 'Środa'
+WHEN 5 THEN 'Czwartek'
+WHEN 6 THEN 'Piątek'
+WHEN 7 THEN  'Sobota'
+END as DzienNazwa, month(@Start+n-1) as MiesiacNumer, case month(@Start+n-1)
+WHEN 1 THEN 'Styczeń'
+WHEN 2 THEN 'Luty'
+WHEN 3 THEN 'Marzec'
+WHEN 4 THEN 'Kwiecień'
+WHEN 5 THEN 'Maj'
+WHEN 6 THEN 'Czerwiec'
+WHEN 7 THEN 'Lipiec'
+WHEN 8 THEN 'Sierpień'
+WHEN 9 THEN 'Wrzesień'
+WHEN 10 THEN 'Październik'
+WHEN 11 THEN 'Listopad'
+WHEN 12 THEN 'Grudzień'
+END as "MiesiacNazwa",
+CAST(YEAR(@Start+n-1) AS VARCHAR(4)) as Rok
+		FROM ( SELECT ROW_NUMBER() OVER (ORDER BY n)
+			FROM Nbrs ) D ( n )
+	WHERE n &lt;= DATEDIFF(day,@Start,@End)+1 ;</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Inserting into Date\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienMiesiaca]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienMiesiaca]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienMiesiaca]"
+                      name="DzienMiesiaca"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienNumer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienNumer]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienNumer]"
+                      name="DzienNumer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienNazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienNazwa]"
+                      length="12"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[DzienNazwa]"
+                      name="DzienNazwa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiesiacNumer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiesiacNumer]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiesiacNumer]"
+                      name="MiesiacNumer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiesiacNazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiesiacNazwa]"
+                      length="11"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[MiesiacNazwa]"
+                      name="MiesiacNazwa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rok]"
+                      codePage="1250"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Rok]"
+                      length="4"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rok]"
+                      name="Rok"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data]"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].Columns[Data]"
+                      name="Data"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienMiesiaca]"
+                      dataType="i4"
+                      name="DzienMiesiaca" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienNumer]"
+                      dataType="i4"
+                      name="DzienNumer" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DzienNazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="12"
+                      name="DzienNazwa" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiesiacNumer]"
+                      dataType="i4"
+                      name="MiesiacNumer" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MiesiacNazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="11"
+                      name="MiesiacNazwa" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Rok]"
+                      codePage="1250"
+                      dataType="str"
+                      length="4"
+                      name="Rok" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Data]"
+                      dataType="dbDate"
+                      name="Data" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Data]"
+                      dataType="dbDate"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Data]"
+                      name="Data" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienMiesiaca]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienMiesiaca]"
+                      name="DzienMiesiaca" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienNumer]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienNumer]"
+                      name="DzienNumer" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienNazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="12"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DzienNazwa]"
+                      name="DzienNazwa" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiesiacNumer]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiesiacNumer]"
+                      name="MiesiacNumer" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiesiacNazwa]"
+                      codePage="1250"
+                      dataType="str"
+                      length="11"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MiesiacNazwa]"
+                      name="MiesiacNazwa" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Rok]"
+                      codePage="1250"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Rok]"
+                      name="Rok" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Inserting into Date.Paths[OLE DB Source Output]"
+              endId="Package\Inserting into Date\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Inserting into Date\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Inserting into Time"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{7E24275D-F647-4202-B4F8-5B3D94AB7208}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Inserting into Time"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Inserting into Time\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Czas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Inserting into Time\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.BeautySalon]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.BeautySalon]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Godzina]"
+                      cachedDataType="numeric"
+                      cachedName="Godzina"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Godzina]"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].Columns[Godzina]" />
+                    <inputColumn
+                      refId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Minuta]"
+                      cachedDataType="numeric"
+                      cachedName="Minuta"
+                      cachedPrecision="18"
+                      externalMetadataColumnId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minuta]"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].Columns[Minuta]" />
+                    <inputColumn
+                      refId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Czas]"
+                      cachedDataType="dbTime2"
+                      cachedName="Czas"
+                      externalMetadataColumnId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Czas]"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].Columns[Czas]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="numeric"
+                      name="ID"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Godzina]"
+                      dataType="numeric"
+                      name="Godzina"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Minuta]"
+                      dataType="numeric"
+                      name="Minuta"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Czas]"
+                      dataType="dbTime2"
+                      name="Czas"
+                      scale="7" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Inserting into Time\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into Time\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Time\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into Time\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Time\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Inserting into Time\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Czas]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DECLARE @Start as Time(0) = CAST('00:00' as time)
+
+;WITH e1(n) AS
+(
+    SELECT 1 UNION ALL SELECT 1 UNION ALL SELECT 1 UNION ALL 
+    SELECT 1 UNION ALL SELECT 1 UNION ALL SELECT 1 UNION ALL 
+    SELECT 1 UNION ALL SELECT 1 UNION ALL SELECT 1 UNION ALL SELECT 1
+), -- 10
+e2(n) AS (SELECT 1 FROM e1 CROSS JOIN e1 AS b), -- 10*10
+e3(n) AS (SELECT 1 FROM e1 CROSS JOIN e2), -- 10*100
+e4(n) AS (SELECT 1 FROM e1 CROSS JOIN e3), 
+tally (n) as ( SELECT n = ROW_NUMBER() OVER (ORDER BY n) FROM e4 )
+SELECT Dateadd(minute, n - 1, @Start) as Czas, DATEPART(hour, Dateadd(minute, n - 1, @Start)) as Godzina, DATEPART(minute, Dateadd(minute, n - 1, @Start)) as Minuta
+FROM   tally
+WHERE  n &lt;= 1440</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Inserting into Time\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].Columns[Godzina]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Godzina]"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].Columns[Godzina]"
+                      name="Godzina"
+                      precision="18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].Columns[Minuta]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Minuta]"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].Columns[Minuta]"
+                      name="Minuta"
+                      precision="18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].Columns[Czas]"
+                      dataType="dbTime2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Czas]"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].Columns[Czas]"
+                      name="Czas"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Godzina]"
+                      dataType="i4"
+                      name="Godzina" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Minuta]"
+                      dataType="i4"
+                      name="Minuta" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Czas]"
+                      dataType="dbTime2"
+                      name="Czas" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Czas]"
+                      dataType="dbTime2"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Czas]"
+                      name="Czas" />
+                    <outputColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Godzina]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Godzina]"
+                      name="Godzina" />
+                    <outputColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Minuta]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Minuta]"
+                      name="Minuta" />
+                    <outputColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Inserting into Time.Paths[OLE DB Source Output]"
+              endId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Inserting into Time\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Inserting into Date"
+          TopLeft="116,91" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Inserting into Time"
+          TopLeft="393,108" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Inserting into Date">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Inserting into Date\OLE DB Source"
+          TopLeft="299,86" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Inserting into Date\OLE DB Destination"
+          TopLeft="291,237" />
+        <EdgeLayout
+          Id="Package\Inserting into Date.Paths[OLE DB Source Output]"
+          TopLeft="375.25,128">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,109"
+              Start="0,0"
+              End="0,101.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,101.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inserting into Date\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inserting into Date\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Inserting into Time">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Inserting into Time\OLE DB Source"
+          TopLeft="252.4,76.8" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Inserting into Time\OLE DB Destination"
+          TopLeft="314.4,207.2" />
+        <EdgeLayout
+          Id="Package\Inserting into Time.Paths[OLE DB Source Output]"
+          TopLeft="327.4,118.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="72.5000000000001,88.4"
+              Start="0,0"
+              End="72.5000000000001,80.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40.2"
+                    Point2="0,44.2"
+                    Point3="4,44.2" />
+                  <mssgle:LineSegment
+                    End="68.5000000000001,44.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.5000000000001,44.2"
+                    Point2="72.5000000000001,44.2"
+                    Point3="72.5000000000001,48.2" />
+                  <mssgle:LineSegment
+                    End="72.5000000000001,80.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inserting into Time\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inserting into Time\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
