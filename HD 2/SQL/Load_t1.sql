@@ -1,5 +1,5 @@
 BULK INSERT client
-FROM 'C:\Users\grajp\PycharmProjects\pythonProject\clients.csv'
+FROM 'C:\Users\grajp\OneDrive\Dokumenty\Git\HD5\HD 2\CSV\clients.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
@@ -9,7 +9,7 @@ WITH
 )
 
 BULK INSERT worker
-FROM 'C:\Users\grajp\PycharmProjects\pythonProject\workers.csv'
+FROM 'C:\Users\grajp\OneDrive\Dokumenty\Git\HD5\HD 2\CSV\workers.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
@@ -19,7 +19,7 @@ WITH
 )
 
 BULK INSERT salon
-FROM 'C:\Users\grajp\PycharmProjects\pythonProject\salons.csv'
+FROM 'C:\Users\grajp\OneDrive\Dokumenty\Git\HD5\HD 2\CSV\salons.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
@@ -29,7 +29,7 @@ WITH
 )
 
 BULK INSERT device
-FROM 'C:\Users\grajp\PycharmProjects\pythonProject\devices.csv'
+FROM 'C:\Users\grajp\OneDrive\Dokumenty\Git\HD5\HD 2\CSV\devices.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
@@ -39,7 +39,7 @@ WITH
 )
 
 BULK INSERT service
-FROM 'C:\Users\grajp\PycharmProjects\pythonProject\service.csv'
+FROM 'C:\Users\grajp\OneDrive\Dokumenty\Git\HD5\HD 2\CSV\service.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
@@ -50,7 +50,7 @@ WITH
 
 
 BULK INSERT appointment
-FROM 'C:\Users\grajp\PycharmProjects\pythonProject\appointments.csv'
+FROM 'C:\Users\grajp\OneDrive\Dokumenty\Git\HD5\HD 2\CSV\appointments.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
@@ -60,7 +60,7 @@ WITH
 )
 
 BULK INSERT execution
-FROM 'C:\Users\grajp\PycharmProjects\pythonProject\executions.csv'
+FROM 'C:\Users\grajp\OneDrive\Dokumenty\Git\HD5\HD 2\CSV\executions.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
