@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="102"
-  DTS:VersionGUID="{8E60D554-D281-4BD7-B4CD-72E019C51642}">
+  DTS:VersionBuild="103"
+  DTS:VersionGUID="{FFA63AE4-1CD7-41AB-8263-78A0F87907D8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -2156,6 +2156,393 @@ where [refTable].[Login] = ?</property>
               endId="Package\Dodawanie Pracownik\Derived Column 3.Inputs[Derived Column Input]"
               name="Union All Output 1"
               startId="Package\Dodawanie Pracownik\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dodawanie Relacja"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1149c6b1-43a9-4c91-8321-e25388ceef41}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dodawanie Relacja"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dodawanie Relacja\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Salon]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dodawanie Relacja\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.BeautySalon]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.BeautySalon]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input].Columns[city]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="city"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Miasto]"
+                      lineageId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input].Columns[street]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="street"
+                      externalMetadataColumnId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ulica]"
+                      lineageId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output].Columns[street]" />
+                    <inputColumn
+                      refId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input].Columns[postcode]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="postcode"
+                      externalMetadataColumnId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kod_pocztowy]"
+                      lineageId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output].Columns[postcode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="numeric"
+                      name="ID"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Kod_pocztowy]"
+                      codePage="1250"
+                      dataType="str"
+                      length="5"
+                      name="Kod_pocztowy" />
+                    <externalMetadataColumn
+                      refId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ulica]"
+                      codePage="1250"
+                      dataType="str"
+                      length="50"
+                      name="Ulica" />
+                    <externalMetadataColumn
+                      refId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Miasto]"
+                      codePage="1250"
+                      dataType="str"
+                      length="30"
+                      name="Miasto" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dodawanie Relacja\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dodawanie Relacja\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dodawanie Relacja\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dodawanie Relacja\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dodawanie Relacja\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dodawanie Relacja\Script Component"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;12"
+              description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+              name="Script Component"
+              version="12">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Stores the source code of the component"
+                  isArray="true"
+                  name="SourceCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Stores the binary representation of the component"
+                  isArray="true"
+                  name="BinaryCode"
+                  state="cdata">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                  name="VSTAProjectName"
+                  typeConverter="NOTBROWSABLE">SC_ef851a154ddb449b8f54ecf38cbb5faa</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the programming language used by the script."
+                  name="ScriptLanguage"
+                  typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read-only variables."
+                  name="ReadOnlyVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a comma-separated list of read/write variables."
+                  name="ReadWriteVariables"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                <property
+                  dataType="System.String"
+                  description="List of breakpoints present on the script."
+                  isArray="true"
+                  name="BreakpointCollection"
+                  typeConverter="NOTBROWSABLE">
+                  <arrayElements
+                    arrayElementCount="0" />
+                </property>
+                <property
+                  dataType="System.String"
+                  description="Checksum to match component metedata against compiled codes."
+                  name="MetadataChecksum140"
+                  typeConverter="NOTBROWSABLE"></property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\Dodawanie Relacja\Script Component.Outputs[Output 0]"
+                  hasSideEffects="true"
+                  name="Output 0">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dodawanie Relacja\Sort"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Dodawanie Relacja\Sort.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dodawanie Relacja\Sort.Inputs[Sort Input].Columns[postcode]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="postcode"
+                      lineageId="Package\Dodawanie Relacja\39:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dodawanie Relacja\Sort.Inputs[Sort Input].Columns[street]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="street"
+                      lineageId="Package\Dodawanie Relacja\40:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dodawanie Relacja\Sort.Inputs[Sort Input].Columns[city]"
+                      cachedCodepage="1250"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="city"
+                      lineageId="Package\Dodawanie Relacja\41:invalid">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output].Columns[postcode]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output].Columns[postcode]"
+                      name="postcode">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dodawanie Relacja\39:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output].Columns[street]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output].Columns[street]"
+                      name="street">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dodawanie Relacja\40:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output].Columns[city]"
+                      codePage="1250"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output].Columns[city]"
+                      name="city"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Dodawanie Relacja\41:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dodawanie Relacja.Paths[Sort Output]"
+              endId="Package\Dodawanie Relacja\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Sort Output"
+              startId="Package\Dodawanie Relacja\Sort.Outputs[Sort Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -9604,87 +9991,87 @@ where [refTable].[Nazwa] = ?</property>
               name="Derived Column Output"
               startId="Package\Dodawanie Wykonanie\Translate date and time.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Dodawanie Wykonanie.Paths[Derived Column Output2]"
+              refId="Package\Dodawanie Wykonanie.Paths[Derived Column Output1]"
               endId="Package\Dodawanie Wykonanie\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Derived Column Output"
               startId="Package\Dodawanie Wykonanie\Derived Column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Dodawanie Wykonanie.Paths[Derived Column Output1]"
+              refId="Package\Dodawanie Wykonanie.Paths[Derived Column Output2]"
               endId="Package\Dodawanie Wykonanie\Get service date.Inputs[Lookup Input]"
               name="Derived Column Output"
               startId="Package\Dodawanie Wykonanie\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output13]"
+              endId="Package\Dodawanie Wykonanie\Derived Column.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Lookup 2.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output12]"
+              endId="Package\Dodawanie Wykonanie\Lookup time.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Lookup date.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output11]"
+              endId="Package\Dodawanie Wykonanie\Put service id from service name.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Get service name.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output10]"
+              endId="Package\Dodawanie Wykonanie\Get device things.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Put service id from service name.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output9]"
+              endId="Package\Dodawanie Wykonanie\Get buy date.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Get service date.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output8]"
+              endId="Package\Dodawanie Wykonanie\Put device ID.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Get buy date.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output7]"
+              endId="Package\Dodawanie Wykonanie\Lookup.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Put device ID.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output6]"
+              endId="Package\Dodawanie Wykonanie\Get clients.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Lookup time.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output5]"
+              endId="Package\Dodawanie Wykonanie\Put clients.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Get clients.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output4]"
+              endId="Package\Dodawanie Wykonanie\Get salon.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Put clients.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output3]"
+              endId="Package\Dodawanie Wykonanie\Put salon.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Get salon.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output2]"
+              endId="Package\Dodawanie Wykonanie\Lookup 1.Inputs[Lookup Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Put salon.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output1]"
+              endId="Package\Dodawanie Wykonanie\Derived Column 1.Inputs[Derived Column Input]"
+              name="Lookup Match Output"
+              startId="Package\Dodawanie Wykonanie\Get device things.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output]"
               endId="Package\Dodawanie Wykonanie\Lookup 2.Inputs[Lookup Input]"
               name="Lookup Match Output"
               startId="Package\Dodawanie Wykonanie\Lookup 1.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output13]"
-              endId="Package\Dodawanie Wykonanie\Derived Column 1.Inputs[Derived Column Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Get device things.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output12]"
-              endId="Package\Dodawanie Wykonanie\Lookup 1.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Put salon.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output11]"
-              endId="Package\Dodawanie Wykonanie\Put salon.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Get salon.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output10]"
-              endId="Package\Dodawanie Wykonanie\Get salon.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Put clients.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output9]"
-              endId="Package\Dodawanie Wykonanie\Put clients.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Get clients.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output8]"
-              endId="Package\Dodawanie Wykonanie\Get clients.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Lookup time.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output6]"
-              endId="Package\Dodawanie Wykonanie\Lookup.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Put device ID.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output5]"
-              endId="Package\Dodawanie Wykonanie\Put device ID.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Get buy date.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output4]"
-              endId="Package\Dodawanie Wykonanie\Get buy date.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Get service date.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output3]"
-              endId="Package\Dodawanie Wykonanie\Get device things.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Put service id from service name.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output2]"
-              endId="Package\Dodawanie Wykonanie\Put service id from service name.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Get service name.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output1]"
-              endId="Package\Dodawanie Wykonanie\Lookup time.Inputs[Lookup Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Lookup date.Outputs[Lookup Match Output]" />
-            <path
               refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output14]"
-              endId="Package\Dodawanie Wykonanie\Derived Column.Inputs[Derived Column Input]"
-              name="Lookup Match Output"
-              startId="Package\Dodawanie Wykonanie\Lookup 2.Outputs[Lookup Match Output]" />
-            <path
-              refId="Package\Dodawanie Wykonanie.Paths[Lookup Match Output7]"
               endId="Package\Dodawanie Wykonanie\Translate date and time.Inputs[Derived Column Input]"
               name="Lookup Match Output"
               startId="Package\Dodawanie Wykonanie\Lookup.Outputs[Lookup Match Output]" />
@@ -9711,7 +10098,7 @@ where [refTable].[Nazwa] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="160.5,42"
+          Size="160,42"
           Id="Package\Dodawanie Klient"
           TopLeft="790,287" />
         <NodeLayout
@@ -9734,6 +10121,10 @@ where [refTable].[Nazwa] = ?</property>
           Size="186,42"
           Id="Package\Dodawanie Wykonanie"
           TopLeft="1185.5,274.5" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Dodawanie Relacja"
+          TopLeft="624,154" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -10826,35 +11217,19 @@ where [refTable].[Nazwa] = ?</property>
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="140,58"
-          Id="Package\Dodawanie Wykonanie\Put device ID"
-          TopLeft="271.5,788.5" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Dodawanie Wykonanie\Lookup"
-          TopLeft="549,741" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Dodawanie Wykonanie\Get service date"
-          TopLeft="503.5,618.5" />
-        <NodeLayout
           Size="122,42"
-          Id="Package\Dodawanie Wykonanie\Get buy date"
-          TopLeft="217,667.5" />
-        <NodeLayout
-          Size="122.5,42"
           Id="Package\Dodawanie Wykonanie\Put salon"
           TopLeft="479.5,1169.5" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\Dodawanie Wykonanie\Derived Column 1"
-          TopLeft="239,534.5" />
+          Size="156,42"
+          Id="Package\Dodawanie Wykonanie\Get service name"
+          TopLeft="111.5,221" />
         <NodeLayout
           Size="122,42"
           Id="Package\Dodawanie Wykonanie\Get clients"
           TopLeft="55,1012" />
         <NodeLayout
-          Size="232.5,42"
+          Size="232,42"
           Id="Package\Dodawanie Wykonanie\Put service id from service name"
           TopLeft="87.5,319" />
         <NodeLayout
@@ -10862,21 +11237,21 @@ where [refTable].[Nazwa] = ?</property>
           Id="Package\Dodawanie Wykonanie\Lookup date"
           TopLeft="395,920.5" />
         <NodeLayout
-          Size="122,42"
-          Id="Package\Dodawanie Wykonanie\Lookup 2"
-          TopLeft="565,1292" />
-        <NodeLayout
-          Size="156.5,42"
-          Id="Package\Dodawanie Wykonanie\Get service name"
-          TopLeft="111.5,221" />
+          Size="113,42"
+          Id="Package\Dodawanie Wykonanie\Get service date"
+          TopLeft="503.5,618.5" />
         <NodeLayout
           Size="150,42"
           Id="Package\Dodawanie Wykonanie\Import executions"
           TopLeft="98.5,111.5" />
         <NodeLayout
-          Size="160.5,42"
-          Id="Package\Dodawanie Wykonanie\Get device things"
-          TopLeft="204.7,432.1" />
+          Size="113,42"
+          Id="Package\Dodawanie Wykonanie\Lookup"
+          TopLeft="549,741" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Dodawanie Wykonanie\Lookup time"
+          TopLeft="180.5,922.5" />
         <NodeLayout
           Size="163,42"
           Id="Package\Dodawanie Wykonanie\Translate date and time"
@@ -10894,51 +11269,165 @@ where [refTable].[Nazwa] = ?</property>
           Id="Package\Dodawanie Wykonanie\OLE DB Destination"
           TopLeft="107.4,1312.8" />
         <NodeLayout
-          Size="122,42"
-          Id="Package\Dodawanie Wykonanie\Lookup time"
-          TopLeft="180.5,922.5" />
-        <NodeLayout
           Size="123,42"
           Id="Package\Dodawanie Wykonanie\Get salon"
           TopLeft="261,1165.5" />
+        <NodeLayout
+          Size="140,58"
+          Id="Package\Dodawanie Wykonanie\Put device ID"
+          TopLeft="271.5,788.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Dodawanie Wykonanie\Derived Column 1"
+          TopLeft="239,534.5" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Dodawanie Wykonanie\Get device things"
+          TopLeft="204.7,432.1" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Dodawanie Wykonanie\Lookup 2"
+          TopLeft="565,1292" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Dodawanie Wykonanie\Derived Column"
+          TopLeft="313.6,1272.8" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\Dodawanie Wykonanie\Get buy date"
+          TopLeft="217,667.5" />
         <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output3]"
-          TopLeft="203.75,361">
+          Id="Package\Dodawanie Wykonanie.Paths[OLE DB Source Output]"
+          TopLeft="173.5,153.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="81.2,71.1"
+              EndConnector="16.25,67.5"
               Start="0,0"
-              End="81.2,63.6">
+              End="16.25,60">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.55" />
+                    End="0,29.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.55"
-                    Point2="0,35.55"
-                    Point3="4,35.55" />
+                    Point1="0,29.75"
+                    Point2="0,33.75"
+                    Point3="4,33.75" />
                   <mssgle:LineSegment
-                    End="77.2,35.55" />
+                    End="12.25,33.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="77.2,35.55"
-                    Point2="81.2,35.55"
-                    Point3="81.2,39.55" />
+                    Point1="12.25,33.75"
+                    Point2="16.25,33.75"
+                    Point3="16.25,37.75" />
                   <mssgle:LineSegment
-                    End="81.2,63.6" />
+                    End="16.25,60" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output14]"
+          TopLeft="605.5,783">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24,46"
+              Start="0,0"
+              End="-24,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19"
+                    Point2="0,23"
+                    Point3="-4,23" />
+                  <mssgle:LineSegment
+                    End="-20,23" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20,23"
+                    Point2="-24,23"
+                    Point3="-24,27" />
+                  <mssgle:LineSegment
+                    End="-24,38.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-7.59138671875001,40.55,96.3827734375,11.609375"
+              BoundingBox="-60.19138671875,28,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output2]"
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output13]"
+          TopLeft="565,1313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-97.4,-19.1999999999998"
+              Start="0,0"
+              End="-89.9,-19.1999999999998">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-44.7,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-44.7,0"
+                    Point2="-48.7,0"
+                    Point3="-48.7,-4" />
+                  <mssgle:LineSegment
+                    End="-48.7,-15.1999999999998" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.7,-15.1999999999998"
+                    Point2="-48.7,-19.1999999999998"
+                    Point3="-52.7,-19.1999999999998" />
+                  <mssgle:LineSegment
+                    End="-89.9,-19.1999999999998" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-96.89138671875,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output12]"
+          TopLeft="395,942.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-92.5,0"
+              Start="0,0"
+              End="-85,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-85,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-90.69138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output11]"
           TopLeft="189.75,263">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -10974,26 +11463,350 @@ where [refTable].[Nazwa] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output1]"
-          TopLeft="395,942.5">
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output10]"
+          TopLeft="203.75,361">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-92.5,0"
+              EndConnector="81.2,71.1"
               Start="0,0"
-              End="-85,0">
+              End="81.2,63.6">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-85,0" />
+                    End="0,31.55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.55"
+                    Point2="0,35.55"
+                    Point3="4,35.55" />
+                  <mssgle:LineSegment
+                    End="77.2,35.55" />
+                  <mssgle:CubicBezierSegment
+                    Point1="77.2,35.55"
+                    Point2="81.2,35.55"
+                    Point3="81.2,39.55" />
+                  <mssgle:LineSegment
+                    End="81.2,63.6" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-90.69138671875,5,96.3827734375,11.609375"
+              BoundingBox="-7.59138671875001,40.55,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output9]"
+          TopLeft="503.5,639.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-164.5,49"
+              Start="0,0"
+              End="-157,49">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-78.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-78.25,0"
+                    Point2="-82.25,0"
+                    Point3="-82.25,4" />
+                  <mssgle:LineSegment
+                    End="-82.25,45" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-82.25,45"
+                    Point2="-82.25,49"
+                    Point3="-86.25,49" />
+                  <mssgle:LineSegment
+                    End="-157,49" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-130.44138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output8]"
+          TopLeft="278,709.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="63.5,79"
+              Start="0,0"
+              End="63.5,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.5"
+                    Point2="0,39.5"
+                    Point3="4,39.5" />
+                  <mssgle:LineSegment
+                    End="59.5,39.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.5,39.5"
+                    Point2="63.5,39.5"
+                    Point3="63.5,43.5" />
+                  <mssgle:LineSegment
+                    End="63.5,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.44138671875,44.5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output7]"
+          TopLeft="411.5,817.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="137.5,-55.5"
+              Start="0,0"
+              End="130,-55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="64.75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="64.75,0"
+                    Point2="68.75,0"
+                    Point3="68.75,-4" />
+                  <mssgle:LineSegment
+                    End="68.75,-51.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="68.75,-51.5"
+                    Point2="68.75,-55.5"
+                    Point3="72.75,-55.5" />
+                  <mssgle:LineSegment
+                    End="130,-55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="20.55861328125,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output6]"
+          TopLeft="241.5,964.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-125.5,47.5"
+              Start="0,0"
+              End="-125.5,40">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.75"
+                    Point2="0,23.75"
+                    Point3="-4,23.75" />
+                  <mssgle:LineSegment
+                    End="-121.5,23.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-121.5,23.75"
+                    Point2="-125.5,23.75"
+                    Point3="-125.5,27.75" />
+                  <mssgle:LineSegment
+                    End="-125.5,40" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-110.94138671875,28.75,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output5]"
+          TopLeft="116,1054">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="38.5,52"
+              Start="0,0"
+              End="38.5,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22"
+                    Point2="0,26"
+                    Point3="4,26" />
+                  <mssgle:LineSegment
+                    End="34.5,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="34.5,26"
+                    Point2="38.5,26"
+                    Point3="38.5,30" />
+                  <mssgle:LineSegment
+                    End="38.5,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-28.94138671875,31,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output4]"
+          TopLeft="215.5,1127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="45.5,59.5"
+              Start="0,0"
+              End="38,59.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="18.75,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18.75,0"
+                    Point2="22.75,0"
+                    Point3="22.75,4" />
+                  <mssgle:LineSegment
+                    End="22.75,55.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="22.75,55.5"
+                    Point2="22.75,59.5"
+                    Point3="26.75,59.5" />
+                  <mssgle:LineSegment
+                    End="38,59.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.44138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output3]"
+          TopLeft="384,1188.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="95.5,0"
+              Start="0,0"
+              End="88,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="88,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-4.19138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output2]"
+          TopLeft="602,1190.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73,35.5"
+              Start="0,0"
+              End="65.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="32.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.5,0"
+                    Point2="36.5,0"
+                    Point3="36.5,4" />
+                  <mssgle:LineSegment
+                    End="36.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.5,31.5"
+                    Point2="36.5,35.5"
+                    Point3="40.5,35.5" />
+                  <mssgle:LineSegment
+                    End="65.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-11.69138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output1]"
+          TopLeft="284.95,474.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.55,60.4"
+              Start="0,0"
+              End="35.55,52.9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.2"
+                    Point2="0,30.2"
+                    Point3="4,30.2" />
+                  <mssgle:LineSegment
+                    End="31.55,30.2" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.55,30.2"
+                    Point2="35.55,30.2"
+                    Point3="35.55,34.2" />
+                  <mssgle:LineSegment
+                    End="35.55,52.9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-30.41638671875,35.2,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11034,7 +11847,7 @@ where [refTable].[Nazwa] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Derived Column Output1]"
+          Id="Package\Dodawanie Wykonanie.Paths[Derived Column Output2]"
           TopLeft="320.5,576.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -11059,6 +11872,40 @@ where [refTable].[Nazwa] = ?</property>
                     Point3="239.5,25" />
                   <mssgle:LineSegment
                     End="239.5,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dodawanie Wykonanie.Paths[Derived Column Output1]"
+          TopLeft="313.6,1293.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-35.2,40"
+              Start="0,0"
+              End="-27.7,40">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-13.6,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-13.6,0"
+                    Point2="-17.6,0"
+                    Point3="-17.6,4" />
+                  <mssgle:LineSegment
+                    End="-17.6,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.6,36"
+                    Point2="-17.6,40"
+                    Point3="-21.6,40" />
+                  <mssgle:LineSegment
+                    End="-27.7,40" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11101,531 +11948,9 @@ where [refTable].[Nazwa] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[OLE DB Source Output]"
-          TopLeft="173.5,153.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="16.25,67.5"
-              Start="0,0"
-              End="16.25,60">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,29.75"
-                    Point2="0,33.75"
-                    Point3="4,33.75" />
-                  <mssgle:LineSegment
-                    End="12.25,33.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="12.25,33.75"
-                    Point2="16.25,33.75"
-                    Point3="16.25,37.75" />
-                  <mssgle:LineSegment
-                    End="16.25,60" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output12]"
-          TopLeft="602,1190.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="73,35.5"
-              Start="0,0"
-              End="65.5,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="32.5,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="32.5,0"
-                    Point2="36.5,0"
-                    Point3="36.5,4" />
-                  <mssgle:LineSegment
-                    End="36.5,31.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="36.5,31.5"
-                    Point2="36.5,35.5"
-                    Point3="40.5,35.5" />
-                  <mssgle:LineSegment
-                    End="65.5,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-11.69138671875,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output11]"
-          TopLeft="384,1188.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="95.5,0"
-              Start="0,0"
-              End="88,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="88,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-4.19138671875,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output10]"
-          TopLeft="215.5,1127">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="45.5,59.5"
-              Start="0,0"
-              End="38,59.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="18.75,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="18.75,0"
-                    Point2="22.75,0"
-                    Point3="22.75,4" />
-                  <mssgle:LineSegment
-                    End="22.75,55.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.75,55.5"
-                    Point2="22.75,59.5"
-                    Point3="26.75,59.5" />
-                  <mssgle:LineSegment
-                    End="38,59.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.44138671875,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output9]"
-          TopLeft="116,1054">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="38.5,52"
-              Start="0,0"
-              End="38.5,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,22"
-                    Point2="0,26"
-                    Point3="4,26" />
-                  <mssgle:LineSegment
-                    End="34.5,26" />
-                  <mssgle:CubicBezierSegment
-                    Point1="34.5,26"
-                    Point2="38.5,26"
-                    Point3="38.5,30" />
-                  <mssgle:LineSegment
-                    End="38.5,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-28.94138671875,31,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output8]"
-          TopLeft="241.5,964.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-125.5,47.5"
-              Start="0,0"
-              End="-125.5,40">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19.75"
-                    Point2="0,23.75"
-                    Point3="-4,23.75" />
-                  <mssgle:LineSegment
-                    End="-121.5,23.75" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-121.5,23.75"
-                    Point2="-125.5,23.75"
-                    Point3="-125.5,27.75" />
-                  <mssgle:LineSegment
-                    End="-125.5,40" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-110.94138671875,28.75,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output7]"
-          TopLeft="605.5,783">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-24,46"
-              Start="0,0"
-              End="-24,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,19" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,19"
-                    Point2="0,23"
-                    Point3="-4,23" />
-                  <mssgle:LineSegment
-                    End="-20,23" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-20,23"
-                    Point2="-24,23"
-                    Point3="-24,27" />
-                  <mssgle:LineSegment
-                    End="-24,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-60.19138671875,28,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output6]"
-          TopLeft="411.5,817.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="137.5,-55.5"
-              Start="0,0"
-              End="130,-55.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="64.75,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="64.75,0"
-                    Point2="68.75,0"
-                    Point3="68.75,-4" />
-                  <mssgle:LineSegment
-                    End="68.75,-51.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="68.75,-51.5"
-                    Point2="68.75,-55.5"
-                    Point3="72.75,-55.5" />
-                  <mssgle:LineSegment
-                    End="130,-55.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="20.55861328125,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output5]"
-          TopLeft="278,709.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="63.5,79"
-              Start="0,0"
-              End="63.5,71.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,35.5"
-                    Point2="0,39.5"
-                    Point3="4,39.5" />
-                  <mssgle:LineSegment
-                    End="59.5,39.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="59.5,39.5"
-                    Point2="63.5,39.5"
-                    Point3="63.5,43.5" />
-                  <mssgle:LineSegment
-                    End="63.5,71.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-16.44138671875,44.5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output4]"
-          TopLeft="503.5,639.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-164.5,49"
-              Start="0,0"
-              End="-157,49">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-78.25,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-78.25,0"
-                    Point2="-82.25,0"
-                    Point3="-82.25,4" />
-                  <mssgle:LineSegment
-                    End="-82.25,45" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-82.25,45"
-                    Point2="-82.25,49"
-                    Point3="-86.25,49" />
-                  <mssgle:LineSegment
-                    End="-157,49" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-130.44138671875,-17.609375,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output13]"
-          TopLeft="284.95,474.1">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="35.55,60.4"
-              Start="0,0"
-              End="35.55,52.9">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,26.2"
-                    Point2="0,30.2"
-                    Point3="4,30.2" />
-                  <mssgle:LineSegment
-                    End="31.55,30.2" />
-                  <mssgle:CubicBezierSegment
-                    Point1="31.55,30.2"
-                    Point2="35.55,30.2"
-                    Point3="35.55,34.2" />
-                  <mssgle:LineSegment
-                    End="35.55,52.9" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-30.41638671875,35.2,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154,42"
-          Id="Package\Dodawanie Wykonanie\Derived Column"
-          TopLeft="313.6,1272.8" />
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Lookup Match Output14]"
-          TopLeft="565,1313">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-97.4,-19.1999999999998"
-              Start="0,0"
-              End="-89.9,-19.1999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-44.7,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-44.7,0"
-                    Point2="-48.7,0"
-                    Point3="-48.7,-4" />
-                  <mssgle:LineSegment
-                    End="-48.7,-15.1999999999998" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-48.7,-15.1999999999998"
-                    Point2="-48.7,-19.1999999999998"
-                    Point3="-52.7,-19.1999999999998" />
-                  <mssgle:LineSegment
-                    End="-89.9,-19.1999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-96.89138671875,1,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dodawanie Wykonanie.Paths[Derived Column Output2]"
-          TopLeft="313.6,1293.8">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-35.2,40"
-              Start="0,0"
-              End="-27.7,40">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="-13.6,0" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-13.6,0"
-                    Point2="-17.6,0"
-                    Point3="-17.6,4" />
-                  <mssgle:LineSegment
-                    End="-17.6,36" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-17.6,36"
-                    Point2="-17.6,40"
-                    Point3="-21.6,40" />
-                  <mssgle:LineSegment
-                    End="-27.7,40" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dodawanie Wykonanie\Put device ID">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Urzadzenie]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dodawanie Wykonanie\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[appointment]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dodawanie Wykonanie\Get service date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dodawanie Wykonanie\Get buy date">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:string">false</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dodawanie Wykonanie\Put salon">
     <Properties>
@@ -11650,12 +11975,35 @@ where [refTable].[Nazwa] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Dodawanie Wykonanie\Get service name">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[service]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Dodawanie Wykonanie\Get clients">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -11665,7 +12013,7 @@ where [refTable].[Nazwa] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11719,48 +12067,12 @@ where [refTable].[Nazwa] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dodawanie Wykonanie\Lookup 2">
+    design-time-name="Package\Dodawanie Wykonanie\Get service date">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
           type="q2:string">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Pracownik]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dodawanie Wykonanie\Get service name">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[service]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -11778,22 +12090,45 @@ where [refTable].[Nazwa] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dodawanie Wykonanie\Get device things">
+    design-time-name="Package\Dodawanie Wykonanie\Lookup">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[device]</Value>
+          type="q3:string">[dbo].[appointment]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dodawanie Wykonanie\Lookup time">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Czas]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11829,7 +12164,7 @@ where [refTable].[Nazwa] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -11839,7 +12174,7 @@ where [refTable].[Nazwa] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11860,7 +12195,7 @@ where [refTable].[Nazwa] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dodawanie Wykonanie\Lookup time">
+    design-time-name="Package\Dodawanie Wykonanie\Get salon">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
@@ -11870,7 +12205,7 @@ where [refTable].[Nazwa] = ?</property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[Czas]</Value>
+          type="q3:string">[dbo].[salon]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -11883,27 +12218,125 @@ where [refTable].[Nazwa] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Dodawanie Wykonanie\Get salon">
+    design-time-name="Package\Dodawanie Wykonanie\Put device ID">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[salon]</Value>
+          type="q3:string">[dbo].[Urzadzenie]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dodawanie Wykonanie\Get device things">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[device]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dodawanie Wykonanie\Lookup 2">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Pracownik]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dodawanie Wykonanie\Get buy date">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dodawanie Relacja">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="98,42"
+          Id="Package\Dodawanie Relacja\Sort"
+          TopLeft="312,218.5" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Dodawanie Relacja\Insert Destination"
+          TopLeft="282,333" />
+        <EdgeLayout
+          Id="Package\Dodawanie Relacja.Paths[Sort Output]"
+          TopLeft="362.25,260.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,72.5"
+              Start="0,0"
+              End="0,65">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,65" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Dodawanie Relacja\Script Component"
+          TopLeft="259,100" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
