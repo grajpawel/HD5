@@ -15,14 +15,12 @@ CREATE TABLE Relacja (
 	PRIMARY KEY (ID)
 );
 CREATE TABLE Czas (
-	Czas Time NOT NULL,
 	ID Numeric(18,0) IDENTITY(1,1) NOT NULL,
 	Godzina Numeric(18,0) NOT NULL,
 	Minuta Numeric(18,0) NOT NULL
 	PRIMARY KEY (ID)
 );
 CREATE TABLE Data (
-	Data Date NOT NULL,
 	ID Numeric(18,0) IDENTITY(1,1) NOT NULL,
 	DzienMiesiaca Numeric(18,0) NOT NULL,
 	DzienNumer Numeric(18,0) NOT NULL,
