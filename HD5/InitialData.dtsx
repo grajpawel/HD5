@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{A14C22BD-EA6D-41CC-9DF5-BC30DF0482E8}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{50C93BA1-EC91-49BA-8E16-545752805ED7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -279,7 +279,7 @@
 DECLARE @AllDates table
 		(Date datetime)
 
-SELECT @Start = '2000-01-01', @End = '2021-12-31';
+SELECT @Start = '2000-01-01', @End = '2022-12-31';
 
 WITH Nbrs_3( n ) AS ( SELECT 1 UNION SELECT 0 ),
      Nbrs_2( n ) AS ( SELECT 1 FROM Nbrs_3 n1 CROSS JOIN Nbrs_3 n2 ),
@@ -1683,6 +1683,11 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
                       dataType="numeric"
                       name="Minuta"
                       precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Inserting into Time\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Czas]"
+                      dataType="dbTime2"
+                      name="Czas"
+                      scale="7" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1898,13 +1903,13 @@ WHERE  n &lt;= 1440</property>
           Id="Package\Inserting into Date"
           TopLeft="162,106.5" />
         <NodeLayout
-          Size="169,42"
-          Id="Package\Inserting into Time"
-          TopLeft="393,108" />
-        <NodeLayout
           Size="179,42"
           Id="Package\Inserting into Relacja"
           TopLeft="621,111" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Inserting into Time"
+          TopLeft="393,108" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -1964,6 +1969,59 @@ WHERE  n &lt;= 1440</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Inserting into Relacja">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Inserting into Relacja\OLE DB Destination"
+          TopLeft="314.4,207.2" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Inserting into Relacja\Script Component"
+          TopLeft="323,94" />
+        <EdgeLayout
+          Id="Package\Inserting into Relacja.Paths[Output 0]"
+          TopLeft="402.2,136">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,71.2"
+              Start="0,0"
+              End="0,63.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,63.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Inserting into Relacja\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -2032,57 +2090,6 @@ WHERE  n &lt;= 1440</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Inserting into Time\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Inserting into Relacja">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Inserting into Relacja\OLE DB Destination"
-          TopLeft="314.4,207.2" />
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Inserting into Relacja\Script Component"
-          TopLeft="323,94" />
-        <EdgeLayout
-          Id="Package\Inserting into Relacja.Paths[Output 0]"
-          TopLeft="402.2,136">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,71.2"
-              Start="0,0"
-              End="0,63.7">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,63.7" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Inserting into Relacja\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
